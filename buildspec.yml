@@ -20,7 +20,6 @@ phases:
       - python3 -m venv test_venv
       - . test_venv/bin/activate
       - pip install --upgrade pip
-      - pip install .
       - pip install -r requirements.txt
     finally:
       - echo This always runs even if the login command fails 
