@@ -6,12 +6,17 @@ phases:
   install:
     commands:
       - echo Entered the install phase...
-      - conda env create -f env.yml
     finally:
       - echo This always runs even if the update or install command fails 
   pre_build:
     commands:
       - echo Entered the pre_build phase...
+      - apt-get install -y python3-venv
+      - python3.6 -m venv test_venv
+      - . test_venv/bin/activate
+      - pip install --upgrade pip
+      - pip install .
+      - pip install -r requirements.txt
     finally:
       - echo This always runs even if the login command fails 
   build:
