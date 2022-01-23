@@ -1,29 +1,25 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan 23 20:47:06 2022
-
-@author: abhijeetk
-"""
-
 version: 0.2
 
-env:
-   shell: bash
-phases:
-   install:
-    runtime-versions:
-      python: 3.7
-   pre_build:
-    commands:
-      - echo i am in a building stage 
-#      - conda create -f env.yml
-#      - conda activate glcm_env
-   build:
-    commands:
-      - echo i am in running stage 
-#      - python src/train_new_logistic.py
-#      - python tests/test
-   post_build:
-    commands:
-      - echo Build completed on `date`
+shell: bash
 
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+    finally:
+      - echo This always runs even if the update or install command fails 
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+    finally:
+      - echo This always runs even if the login command fails 
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+    finally:
+      - echo This always runs even if the install command fails
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
