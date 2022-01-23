@@ -7,24 +7,23 @@ Created on Sun Jan 23 20:47:06 2022
 
 version: 0.2
 
-env :
-    shell : bash
-
+env:
+   shell: bash
 phases:
-  install:
+   install:
     runtime-versions:
       python: 3.7
-  pre_build:
+   pre_build:
     commands:
       - echo i am in a building stage 
 #      - conda create -f env.yml
 #      - conda activate glcm_env
-  build:
+   build:
     commands:
       - echo i am in running stage 
 #      - python src/train_new_logistic.py
 #      - python tests/test
-  post_build:
+   post_build:
     commands:
       - echo Build completed on `date`
 
