@@ -6,7 +6,7 @@ phases:
       python: 3.8
     commands:
       - echo Entered the install phase...
-      - apt-get install -y python3-venv
+      - apt install -y python3-venv
     finally:
       - echo This always runs even if the update or install command fails 
   pre_build:
