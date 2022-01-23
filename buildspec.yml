@@ -10,7 +10,7 @@ Created on Sun Jan 23 20:47:06 2022
 version: 0.2
 
 env :
-    shell:bash
+    shell : bash
 
 phases:
   install:
