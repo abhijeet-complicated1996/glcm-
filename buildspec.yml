@@ -5,7 +5,7 @@ shell: bash
 phases:
   install:
     runtime-versions:
-      python: 3.6
+      python: 3.8
     commands:
       - echo Entered the install phase...
     finally:
@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Entered the pre_build phase...
       - apt-get install -y python3-venv
-      - python3.6 -m venv test_venv
+      - python3 -m venv test_venv
       - . test_venv/bin/activate
       - pip install --upgrade pip
       - pip install .
