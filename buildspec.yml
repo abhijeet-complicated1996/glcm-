@@ -27,7 +27,7 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
-    #  - python -m src.train_new_logistic
+      - python -m src.train_new_logistic
     finally:
       - echo This always runs even if the install command fails
   post_build:
